@@ -1,6 +1,6 @@
 module TestRanges
 
-using Base.Test
+using Test
 using RLEVectors
 
 @testset begin
@@ -25,10 +25,10 @@ using RLEVectors
 
 x = RLEVector( collect(2:2:20) )
 y = RLEVector( collect(1:1:10) )
-    
+
 ranges = [ 1:1, 1:2, 2:3, 4:8, 1:10, 9:10, 10:10 ]
 @test [ mean(x[ r ]) for r in ranges ] == rangeMeans( ranges, x )
-    
+
 end # testset
 
 end # module

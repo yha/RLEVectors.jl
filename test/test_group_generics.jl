@@ -1,6 +1,6 @@
 module TestGroupGenerics
 
-using Base.Test
+using Test
 using RLEVectors
 using Compat
 @testset begin
@@ -23,10 +23,10 @@ x = RLEVector(vec)
 @test sum(RLEVector([4, 4, 5, 5, 6, 6])) == 30
 @test mean(RLEVector([4, 4, 5, 5, 6, 6])) == 5.0
 @test x .^ 2 == RLEVector( [1, 1, 4, 4, 16, 16] )
-@test x .^ 3 == RLEVector( [1, 1, 8, 8, 64, 64] )    
+@test x .^ 3 == RLEVector( [1, 1, 8, 8, 64, 64] )
 @test x + x == RLEVector( [2, 2, 4, 4, 8, 8] )
 @test x - x == RLEVector( [0, 0, 0, 0, 0, 0] )
-rle = RLEVector( [4, 4, 9, 9, 16, 16] )    
+rle = RLEVector( [4, 4, 9, 9, 16, 16] )
 @test @compat sqrt.(rle) == RLEVector( [2, 2, 3, 3, 4, 4] )
 
 # math on bools
@@ -38,7 +38,7 @@ vec = [1,1,2,2,4,4]
 x = RLEVector(vec)
 @test x + true == x + 1
 @test x + false == x
-    
+
 # findmax, findmin
 @test findmin(RLEVector([1,2,3,4,1,1])) == findmin([1,2,3,4,1,1])
 @test findmax(RLEVector([1,2,3,4,1,1])) == findmax([1,2,3,4,1,1])

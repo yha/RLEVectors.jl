@@ -1,6 +1,6 @@
 module TestRLEDF
 
-using Base.Test
+using Test
 using RLEVectors
 using AxisArrays
 using DataFrames
